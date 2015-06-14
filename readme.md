@@ -24,9 +24,18 @@ Docker-compose
 
 ## Run
 
-    ./run
+    install node.js
+    npm install -g anvil-connect
+    cd connect
+    nv migrate
+    ./run                              # run on laptop-connect.anvil.io
+    NODE_HOST=connect.anvil.io ./run   # run on connec.anvil.io
     
 ## Misc
 
 Generating SSL Certificate: https://www.digitalocean.com/community/tutorials/how-to-create-an-ssl-certificate-on-nginx-for-ubuntu-14-04
 Architecture: http://anandmanisankar.com/posts/docker-container-nginx-node-redis-example/
+
+### Docker commands
+
+    dc run --service-ports connect sh   # run command with ports

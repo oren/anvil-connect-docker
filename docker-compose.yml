@@ -4,8 +4,8 @@ connect:
     - redis
   ports:
     - "3000:3000"
-  volumes:
-    - connect:/src
+#  volumes:
+#    - connect:/src
   command: "node server.js"
   environment:
     NODE_ENV: production

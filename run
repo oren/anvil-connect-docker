@@ -1,4 +1,5 @@
-cd nginx && ./replace-host
+cd nginx && ./replace-vars
 cd ..
+docker-compose build
 docker-compose up -d
 
