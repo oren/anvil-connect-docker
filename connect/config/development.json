@@ -1,0 +1,17 @@
+{
+  "issuer": "http://localhost:3000",
+  "client_registration": "scoped",
+  "providers": {
+    "password": true,
+    "google": {
+      "client_id": "CLIENT_ID",
+      "client_secret": "CLIENT_SECRET",
+      "scope": [
+        "https://www.googleapis.com/auth/userinfo.profile",
+        "https://www.googleapis.com/auth/userinfo.email"
+      ]
+    }
+  },
+  "cookie_secret": "df5d2bb3fb6b3e7fe378",
+  "session_secret": "09246fd1ae9023bf33f5"
+}

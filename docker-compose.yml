@@ -1,0 +1,28 @@
+connect:
+  build: connect
+  links:
+    - redis
+  ports:
+    - "3000:3000"
+  volumes:
+    - connect:/src
+  command: "node server.js"
+  environment:
+    NODE_ENV: production
+  restart: always
+
+nginx:
+  build: nginx
+  ports:
+    - "80:80"
+    - "443:443"
+  restart: always
+
+redis:
+  build: redis
+  ports:
+    - "6379"
+  volumes:
+    - /data:/data
+  command: "redis-server"
+  restart: always

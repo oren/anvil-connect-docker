@@ -1,0 +1,19 @@
+{
+  "issuer": "https://your.authorization.server",
+  "client_registration": "dynamic",
+  "providers": {
+    "password": true,
+    "google": {
+      "client_id": "CLIENT_ID",
+      "client_secret": "CLIENT_SECRET",
+      "scope": [
+        "https://www.googleapis.com/auth/userinfo.profile",
+        "https://www.googleapis.com/auth/userinfo.email"
+      ]
+    }
+  },
+  "cookie_secret": "fd6cdcf9733f50ce2b54",
+  "session_secret": "16718ca6a00931517404",
+  "redis": {
+  }
+}

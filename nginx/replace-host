@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cp default.conf.example default.conf
+
+os=$(uname)
+
+if [ "$os" = "Linux" ]; then
+  gateway=$(ip -o -4 addr show docker0| awk -F '[ /]+' '/global/ {print $4}')
+  replace_gateway=s/GATEWAY/$gateway/g
+  sed -i "$replace_gateway" default.conf
+else
+  gateway=$(boot2docker ip)
+  replace_gateway=s/GATEWAY/$gateway/g
+  perl -p -i -e "$replace_gateway" efault.conf
+fi
