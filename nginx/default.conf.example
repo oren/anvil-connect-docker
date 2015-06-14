@@ -7,7 +7,7 @@ upstream anvil {
 # Denying/requiring SSL
 server {
     listen       *:80;
-    server_name  laptop-connect.anvil.io;
+    server_name  HOST;
     rewrite      ^   https://$server_name$request_uri? redirect;
 }
 
