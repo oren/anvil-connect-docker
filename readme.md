@@ -45,6 +45,4 @@ Connect's default host is laptop-connect.anvil.io. to change it use the `NODE_HO
 
 ### Docker commands
 
-    docker-compose ps
-    docker-compose run --service-ports connect sh   # run command with ports
-
+    docker-compose ps                               # list containers
