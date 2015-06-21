@@ -3,7 +3,5 @@ RUN apk add --update python make alpine-sdk && \
     rm /var/cache/apk/*
 WORKDIR /src
 COPY . /src/
-COPY id_rsa /root/.ssh/id_rsa
 RUN npm install
 RUN npm install -g anvil-connect@0.1.40
-RUN nv migrate

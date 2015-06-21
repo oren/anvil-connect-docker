@@ -26,6 +26,7 @@ Docker-compose
 
     ./run                              # run on laptop-connect.anvil.io
     NODE_HOST=connect.anvil.io ./run   # run on connec.anvil.io
+    https://laptop-connect.anvil.io/.well-known/openid-configuration
 
 ## Misc
 
