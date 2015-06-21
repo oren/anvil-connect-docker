@@ -1,5 +1,8 @@
 cd nginx && ./replace-vars
 cd ..
+cd connect
+./key-gen
+cd ..
 docker-compose build
 docker-compose up -d
 

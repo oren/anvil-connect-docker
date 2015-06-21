@@ -1,0 +1,10 @@
+#!/bin/bash
+
+keys_dir=config/keys
+
+if [ ! -d "$keys_dir" ]
+  then
+  mkdir -p config/keys
+  openssl genrsa -out config/keys/private.pem 2048
+  openssl rsa -pubout -in config/keys/private.pem -out config/keys/public.pem
+fi
