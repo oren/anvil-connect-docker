@@ -1,0 +1,31 @@
+#!/bin/sh
+
+cp nginx/default.conf.example nginx/default.conf
+cp connect/config/production.json.example connect/config/production.json
+
+os=$(uname)
+host=$NODE_HOST;
+# : is 'do nothing' command. it emits the value, then tries to run it
+: ${host:=laptop-connect.anvil.io};
+
+echo $host
+
+if [ "$os" = "Linux" ]; then
+  gateway=$(ip -o -4 addr show docker0| awk -F '[ /]+' '/global/ {print $4}')
+  replace_gateway=s/GATEWAY/$gateway/g
+  sed -i "$replace_gateway" nginx/default.conf
+
+  replace_host=s/HOST/$host/g
+  sed -i "$replace_host" nginx/default.conf
+
+  sed -i "$replace_host" connect/config/production.json
+else
+  gateway=$(boot2docker ip)
+  replace_gateway=s/GATEWAY/$gateway/g
+  perl -p -i -e "$replace_gateway" default.conf
+
+  replace_host=s/HOST/$host/g
+  perl -p -i -e "$replace_host" default.conf
+
+  perl -p -i -e "$replace_host" connect/config/production.json
+fi

@@ -1,5 +1,5 @@
 {
-  "issuer": "https://your.authorization.server",
+  "issuer": "https://HOST",
   "client_registration": "dynamic",
   "providers": {
     "password": true,

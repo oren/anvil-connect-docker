@@ -2,3 +2,4 @@ node_modules
 config.*.json
 *.pem
 nginx/default.conf
+connect/config/production.json
