@@ -45,4 +45,11 @@ Connect's default host is laptop-connect.anvil.io. to change it use the `NODE_HO
 
 ### Docker commands
 
-    docker-compose ps                               # list containers
+List containers
+
+    docker-compose ps
+
+Register a web app
+
+    docker-compose run connect nv add client '{ "client_name": "app1", "default_max_age": 36000, "redirect_uris": ["http://localhost:9000/callback.html"], "post_logout_redirect_uris": ["http://localhost:9000"], "trusted": "true" }'
+
