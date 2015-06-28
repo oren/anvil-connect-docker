@@ -51,5 +51,5 @@ List containers
 
 Register a web app
 
-    docker-compose run connect nv add client '{ "client_name": "app1", "default_max_age": 36000, "redirect_uris": ["http://connect.anvil.io:9000/callback"], "post_logout_redirect_uris": ["http://connect.anvil.io:9000"], "trusted": "true" }'
+    docker-compose run connect nv add client '{ "client_name": "app1", "default_max_age": 36000, "redirect_uris": ["http://connect.anvil.io:9000/callback", "http://connect.anvil.io:9000/rp.html"], "post_logout_redirect_uris": ["http://connect.anvil.io:9000"], "trusted": "true" }'
 
