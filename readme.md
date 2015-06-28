@@ -29,7 +29,7 @@ Docker-compose
 on mac replace 127.0.0.1 with the output of `boot2docker ip`
 
 ## Run
-    ./run
+    NODE_HOST=connect.anvil.io ./run
 
 open [https://laptop-connect.anvil.io/.well-known/openid-configuration](https://laptop-connect.anvil.io/.well-known/openid-configuration)
 
