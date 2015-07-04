@@ -11,6 +11,8 @@ connect:
 
 nginx:
   build: nginx
+  links:
+    - connect
   ports:
     - "80:80"
     - "443:443"

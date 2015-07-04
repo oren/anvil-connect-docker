@@ -5,3 +5,4 @@ WORKDIR /src
 COPY . /src/
 RUN npm install
 RUN npm install -g anvil-connect@0.1.40
+RUN npm install -g bower && bower install --allow-root

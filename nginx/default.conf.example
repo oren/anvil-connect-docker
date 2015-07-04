@@ -1,5 +1,5 @@
 upstream anvil {
-  server GATEWAY:3000;
+  server connect_1:3000;
   # ... add other IP:PORT combinations here if desired
 }
 

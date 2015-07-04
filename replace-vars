@@ -11,19 +11,11 @@ host=$NODE_HOST;
 echo $host
 
 if [ "$os" = "Linux" ]; then
-  gateway=$(ip -o -4 addr show docker0| awk -F '[ /]+' '/global/ {print $4}')
-  replace_gateway=s/GATEWAY/$gateway/g
-  sed -i "$replace_gateway" nginx/default.conf
-
   replace_host=s/HOST/$host/g
   sed -i "$replace_host" nginx/default.conf
 
   sed -i "$replace_host" connect/config/production.json
 else
-  gateway=$(boot2docker ip)
-  replace_gateway=s/GATEWAY/$gateway/g
-  perl -p -i -e "$replace_gateway" default.conf
-
   replace_host=s/HOST/$host/g
   perl -p -i -e "$replace_host" default.conf
 
