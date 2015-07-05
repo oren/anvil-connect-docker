@@ -24,5 +24,5 @@ redis:
     - "6379"
   volumes:
     - /data:/data
-  command: "redis-server /etc/redis.conf"
+  command: "redis-server"
   restart: always
