@@ -15,5 +15,6 @@
   "cookie_secret": "fd6cdcf9733f50ce2b54",
   "session_secret": "16718ca6a00931517404",
   "redis": {
+    "url": "redis://redis:6379"
   }
 }
